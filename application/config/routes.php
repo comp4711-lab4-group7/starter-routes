@@ -55,3 +55,6 @@ $route['translate_uri_dashes'] = FALSE;
 
 // #3
 $route['sleep'] = 'first/zzz';
+
+// #4
+$route['lock/(:any)/(:any)'] = 'welcome/shucks';
