@@ -59,3 +59,18 @@ $route['sleep'] = 'first/zzz';
 // #4
 $route['lock/(:any)/(:any)'] = 'welcome/shucks';
 
+// #5
+$route['show/(:num)'] = 'first/gimme/$1';
+
+// #6
+$route['dunno'] = function() {
+   $source = '../data/albert.jpg'; // an image you provide, outside of "public"!
+   // set the mime type for that image (jpeg, png, etc)
+   header("Content-type: image/jpeg"); 
+   header('Content-Disposition: inline');
+   readfile($source); // dish it
+   die(); // and we don't have to go any further
+};
+
+// #7
+$route['^[a-zA-Z]{4}/bingo'] = 'bingo';
