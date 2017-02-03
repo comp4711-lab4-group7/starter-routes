@@ -1,26 +1,35 @@
 <?php
 
-
-
-defined('BASEPATH') OR exit('No direct script access allowed');
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
-
-/**
- * Description of First
- *
- * @author Hanuk
- */
 class First extends Application {
-    //put your code here
+
+    // #1
     public function index()
+    {
+	      $record = $this->quotes->get('1');
+        $this->data = array_merge($this->data, $record);
+        $this->data['pagebody'] = 'justone';
+        $this->render();
+    }
+    
+    // #3
+    public function zzz() 
     {
         $record = $this->quotes->get('1');
         $this->data = array_merge($this->data, $record);
         $this->data['pagebody'] = 'justone';
+        $this->render();
+    }
+    
+    public function gimme($id){
+        // loads justone
+        $this->data['pagebody'] = 'justone';	
+        
+        // gets quote of id
+	$source = $this->quotes->get($id);
+        
+        // merge the records to data array
+	$this->data = array_merge($this->data, $source);
+	
         $this->render();
     }
 }
