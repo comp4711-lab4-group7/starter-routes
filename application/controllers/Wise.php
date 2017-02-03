@@ -7,7 +7,8 @@
  */
 
 class Wise extends Application{
-    public function Bingo(){
+    #8
+    public function bingo(){
         $record = $this->quotes->get('6');
         $this->data= array_merge($this->data,$record);
         $this->data['pagebody'] = 'justone';

@@ -1,6 +1,6 @@
 <?php
 
-class Welcome extends Application {
+class Hogwarts extends Application {
     
     // #2
     public function index()
