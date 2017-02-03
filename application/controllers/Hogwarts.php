@@ -37,4 +37,11 @@ class Hogwarts extends Application
         $this->data['pagebody'] = 'justone';
         $this->render();
     }
+     public function random() 
+    {
+        $record = $this->quotes->get(rand(1,6));
+        $this->data = array_merge($this->data, $record);
+        $this->data['pagebody'] = 'justone';
+        $this->render();
+    }
 }
